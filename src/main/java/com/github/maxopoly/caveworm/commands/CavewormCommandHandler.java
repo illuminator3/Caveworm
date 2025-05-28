@@ -15,7 +15,7 @@ public class CavewormCommandHandler {
         cwgen.setUsage("/cwgen <length>");
 
         PluginCommand cwreload = plugin.getCommand("cwreload");
-        cwreload.setExecutor(new GenerateCave());
+        cwreload.setExecutor(new ReloadConfig());
         cwreload.setDescription("Reloads the config");
         cwreload.setUsage("/cwreload");
 
@@ -25,7 +25,7 @@ public class CavewormCommandHandler {
         cwseed.setUsage("/cwseed");
 
         PluginCommand cwmultiseed = plugin.getCommand("cwmultiseed");
-        cwmultiseed.setExecutor(new GenerateCave());
+        cwmultiseed.setExecutor(new MultiSeedMap());
         cwmultiseed.setDescription("Begins distributing caves around the map as specified in any yml files in the config folder");
         cwmultiseed.setUsage("/cwmultiseed");
     }
