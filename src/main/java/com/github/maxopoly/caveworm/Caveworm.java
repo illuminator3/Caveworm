@@ -2,7 +2,6 @@ package com.github.maxopoly.caveworm;
 
 import com.github.maxopoly.caveworm.commands.CavewormCommandHandler;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.spigotmc.AsyncCatcher;
 
 import java.util.logging.Level;
 
@@ -17,7 +16,6 @@ public class Caveworm extends JavaPlugin {
 
         config = new WormConfig();
         refreshConfig();
-        AsyncCatcher.enabled = false;
     }
 
     /**
