@@ -4,36 +4,36 @@ import org.bukkit.Location;
 
 public class LocationOffset {
 
-	private int xOffSet;
-	private int yOffSet;
-	private int zOffSet;
+    private final int xOffSet;
+    private final int yOffSet;
+    private final int zOffSet;
 
-	public LocationOffset(int xOffSet, int yOffSet, int zOffSet) {
-		this.xOffSet = xOffSet;
-		this.yOffSet = yOffSet;
-		this.zOffSet = zOffSet;
-	}
+    public LocationOffset(int xOffSet, int yOffSet, int zOffSet) {
+        this.xOffSet = xOffSet;
+        this.yOffSet = yOffSet;
+        this.zOffSet = zOffSet;
+    }
 
-	public Location getOffSetLocation(Location loc) {
-		return new Location(loc.getWorld(), loc.getX() + xOffSet, loc.getY()
-				+ yOffSet, loc.getZ() + yOffSet);
-	}
+    public Location getOffSetLocation(Location loc) {
+        return new Location(loc.getWorld(), loc.getX() + xOffSet, loc.getY()
+                + yOffSet, loc.getZ() + yOffSet);
+    }
 
-	public int getXOffSet() {
-		return xOffSet;
-	}
+    public int getXOffSet() {
+        return xOffSet;
+    }
 
-	public int getYOffSet() {
-		return yOffSet;
-	}
+    public int getYOffSet() {
+        return yOffSet;
+    }
 
-	public int getZOffSet() {
-		return zOffSet;
-	}
+    public int getZOffSet() {
+        return zOffSet;
+    }
 
-	public String toString() {
-		return "LocationOffset(x=" + xOffSet + ",y=" + yOffSet + ",z="
-				+ zOffSet + ")";
-	}
+    public String toString() {
+        return "LocationOffset(x=" + xOffSet + ",y=" + yOffSet + ",z="
+                + zOffSet + ")";
+    }
 
 }

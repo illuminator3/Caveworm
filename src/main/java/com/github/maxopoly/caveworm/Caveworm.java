@@ -1,58 +1,69 @@
 package com.github.maxopoly.caveworm;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-
+import com.github.maxopoly.caveworm.commands.CavewormCommandHandler;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.spigotmc.AsyncCatcher;
 
-import com.github.maxopoly.caveworm.commands.CavewormCommandHandler;
-import com.github.maxopoly.caveworm.distribution.GlobalDistributor;
-import com.github.maxopoly.caveworm.external.HiddenOreManager;
+import java.util.logging.Level;
 
-import vg.civcraft.mc.civmodcore.ACivMod;
-
-public class Caveworm extends ACivMod {
-
+public class Caveworm extends JavaPlugin {
     private static WormConfig config;
     private static Caveworm instance;
-    private static HiddenOreManager hiddenOreManager;
 
     public void onEnable() {
-	instance = this;
-	handle = new CavewormCommandHandler();
-	config = new WormConfig();
-	refreshConfig();
-	if (config.useHiddenOre()) {
-	    if (Bukkit.getPluginManager().isPluginEnabled("HiddenOre")) {
-		hiddenOreManager = new HiddenOreManager();
-	    } else {
-		warning("Attempted to send block break events to HiddenOre according to config, but it seems like HiddenOre isn't loaded on this server");
-	    }
-	}
-	AsyncCatcher.enabled = false;
+        instance = this;
+
+        new CavewormCommandHandler(this);
+
+        config = new WormConfig();
+        refreshConfig();
+        AsyncCatcher.enabled = false;
     }
 
-    @Override
-    protected String getPluginName() {
-	return "Caveworm";
+    /**
+     * Simple WARNING level logging.
+     */
+    public void warning(String message) {
+        getLogger().log(Level.WARNING, message);
+    }
+
+    /**
+     * Simple INFO level logging
+     */
+    public void info(String message) {
+        getLogger().log(Level.INFO, message);
+    }
+
+    /**
+     * Live activatable debug message (using plugin's config.yml top level debug tag to decide) at
+     * INFO level.
+     * <p>
+     * Skipped if DebugLog is false.
+     */
+    public void debug(String message) {
+//        if (isDebugEnabled()) { TODO
+//            getLogger().log(Level.INFO, message);
+//        }
+    }
+
+    /**
+     * Simple SEVERE level logging.
+     */
+    public void severe(String message) {
+        getLogger().log(Level.SEVERE, message);
     }
 
     public static WormConfig getWormConfig() {
-	return config;
+        return config;
     }
 
     public static Caveworm getInstance() {
-	return instance;
-    }
-
-    public static HiddenOreManager getHiddenOreManager() {
-	return hiddenOreManager;
+        return instance;
     }
 
     public void refreshConfig() {
-	saveDefaultConfig();
-	reloadConfig();
-	config.parse(this, getConfig());
+        saveDefaultConfig();
+        reloadConfig();
+        config.parse(this, getConfig());
     }
-
 }

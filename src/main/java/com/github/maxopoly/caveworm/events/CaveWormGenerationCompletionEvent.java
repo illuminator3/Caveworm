@@ -1,19 +1,28 @@
 package com.github.maxopoly.caveworm.events;
 
 import com.github.maxopoly.caveworm.WormConfig;
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
 
-import vg.civcraft.mc.civmodcore.interfaces.CustomEvent;
+public class CaveWormGenerationCompletionEvent extends Event {
+    private static final HandlerList handlers = new HandlerList();
 
-public class CaveWormGenerationCompletionEvent extends CustomEvent {
-    
-    private WormConfig configUsed;
-    
+    private final WormConfig configUsed;
+
     public CaveWormGenerationCompletionEvent(WormConfig config) {
-	this.configUsed = config;
-    }
-    
-    public WormConfig getConfig() {
-	return configUsed;
+        this.configUsed = config;
     }
 
+    public WormConfig getConfig() {
+        return configUsed;
+    }
+
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
+
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
 }

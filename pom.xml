@@ -32,20 +32,8 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>2.3.2</version>
 					<configuration>
-						<source>1.8</source>
-						<target>1.8</target>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<configuration>
-						<archive>
-							<manifest>
-								<addClasspath>true</addClasspath>
-								<mainClass>com.github.maxopoly.caveworm.executable.CavewormMain</mainClass>
-							</manifest>
-						</archive>
+						<source>21</source>
+						<target>21</target>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -61,20 +49,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.spigotmc</groupId>
-			<artifactId>Spigot</artifactId>
-			<version>1.10</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>vg.civcraft.mc.civmodcore</groupId>
-			<artifactId>CivModCore</artifactId>
-			<version>1.4.42</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.github.devotedmc</groupId>
-			<artifactId>hiddenore</artifactId>
-			<version>1.2.1</version>
+			<artifactId>spigot</artifactId>
+			<version>1.21.5-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -85,8 +61,8 @@
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
 		<repository>
-			<id>Jenkins-repo</id>
-			<url>http://build.civcraft.co:8080/plugin/repository/everything/</url>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 </project>

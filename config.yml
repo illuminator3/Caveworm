@@ -2,27 +2,27 @@
 
 wormBehavior:
   wormType: Simplexworm
-  
+
   #Amount of octaves in simplex function determining worm movement
   xMovementOctaveCount: 3
   yMovementOctaveCount: 3
   zMovementOctaveCount: 3
-  
+
   #Amplitudes for Simplex functions determining worm movement
   xSpreadAmplitude: 2.0
   ySpreadAmpltitude: 2.0
   zSpreadAmpltitude: 2.0
-  
+
   #Threshhold inside which the worm wont move
   xSpreadThreshHold: 0.0
   ySpreadThreshHold: 0.05
   zSpreadThreshHold: 0.0
-  
+
   #Frequency for Simplex functions determining worm movement
   xSpreadFrequency: 0.08
   ySpreadFrequency: 0.16
   zSpreadFrequency: 0.08
-  
+
   #Seed used for Simplex generator to calculate movement in each dimension, -1 for random seed
   xSeed: -1
   ySeed: -1
@@ -30,56 +30,53 @@ wormBehavior:
 
 caveFormingBehavior:
   formingType: SimplexSphere
-  
+
   #Lower bound of the range in which all blocks in the given direction are cleared around the center cave block
   xLowerRadiusBound: 2
   yLowerRadiusBound: 2
   zLowerRadiusBound: 2
-  
+
   #Lower bound of the range in which all blocks in the given direction are cleared around the center cave block
   xUpperRadiusBound: 6
   yUpperRadiusBound: 6
   zUpperRadiusBound: 6
-  
+
   #Frequency of the Simplex function determining the range in which all blocks in the given direction are cleared around the center cave block
   xFrequency: 0.1
   yFrequency: 0.1
   zFrequency: 0.1
-  
+
   #Amount of octaves of the Simplex function determining the range in which all blocks in the given direction are cleared around the center cave block
   xOctaves: 3
   yOctaves: 3
   zOctaves: 3
-  
+
   #Additional slices besides the main one which will be cleared out in each 2 dimensional level
   xzSlices: 0
   xySlices: 0
   yzSlices: 0
-  
+
   #What to do if a block, which is affected by gravity is above a block to remove:
   #0 Means the block will be cleared, ignoring the fact it will create a flying block
   #1 Means the block wont be cleared
   #2 Means the block will be moved upwards to replace the falling block
   fallingBlockBehavior: 2
-  
+
   fallingBlockReplacement: SANDSTONE
-  
+
   #Materials that wont be replaced when generating caves, use spigot material identifiers here
   ignoreMaterials:
    - BEDROCK
-  
+
   #Seed used for the generator determining spread for each dimension, -1 for random seed
   xSeed: -1
   ySeed: -1
   zSeed: -1
-  
+
   #Material with which the emptied out space is replaced, use identifiers as specified here:
   #https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html   (Default: AIR)
   fillMaterial: AIR
-  
-  #Whether spoofed block breaks are sent to hidden ore when removing blocks
-  useHiddenOre: true
- 
+
 distribution:
   area:
     type: ELLIPSE
@@ -164,6 +161,6 @@ distribution:
           # xOffSet: 1
           # yOffSet: 0
           # zOffSet: -2
-          
+
   caveSystemSeed: -1
   seed: -1
